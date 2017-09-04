@@ -45,7 +45,21 @@ public class TestTakeAway {
         System.out.print("old Customer: " +testTakeAway.getCustomerID() + "new Customer: " + newTA.getCustomerID());
         assertTrue(testTakeAway.getCustomerID()+1==newTA.getCustomerID());
     }
+    
+    //Todo: testPriceBasedOnComboID giving comboID's in and out of bound.
+    // outcome: price for in bound comboID's should vary accordingly and
+    //          for out of bound price must remain 30 Rs.
+    @Test
+    public void testPriceBasedOnComboID(){
+        testTakeAway.setComboID('A');
+        assertEquals(testTakeAway.getPrice(),25.0);
+        testTakeAway = new TakeAway();
+        testTakeAway.setComboID('C');
+        assertEquals(testTakeAway.getPrice(),15.0);
+        testTakeAway = new TakeAway();
+        testTakeAway.setComboID('E');
+        assertEquals(testTakeAway.getPrice(),30.0);
 
-
+    }
 }
 
