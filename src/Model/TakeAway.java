@@ -83,19 +83,31 @@ public class TakeAway {
                 default: break;
             }
     }
+    // For testing purposes
     public String getName(){
         return customerName;
     }
+    
+    // For testing
     public char getComboID(){
         return comboID;
     }
+    
+    // For testing
     public void setComboID(char C){
         this.comboID = C;
         if(((int)this.comboID) <((int)'A')||((int)this.comboID)>((int)'D'))
             this.comboID='\u0000';
     }
 
+    // For testing
     public int getCustomerID(){
         return customerID;
+    }
+
+    // For testing 
+    public double getPrice(){
+        setPrice();
+        return price;
     }
 }
